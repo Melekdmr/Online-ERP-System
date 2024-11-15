@@ -1,0 +1,37 @@
+﻿@* Sınıflara doğrudan erişim sağlamak için kullanılır. Bu sayede,
+     o namespace içindeki sınıfları tanımlarken her seferinde
+    tam yolu yazmak zorunda kalmazsınız. *@
+
+@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Departman>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>DEPARTMAN ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAY</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.DepartmanId</td>
+            <td>@x.Departmanad</td>
+            <td><a href="/Departman/DepartmanSil/@x.DepartmanId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Departman/DepartmanGetir/@x.DepartmanId" class="btn btn-success">Güncelle</a></td>
+            <td>
+                <a href="/Departman/DepartmanDetay/@x.DepartmanId" class="btn btn-default" style="background-color: #546E7A; color: white; ">Detay</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Departman/DepartmanEkle" class="btn btn-primary">Departman Ekle</a>
+
+

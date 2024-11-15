@@ -1,0 +1,33 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model  List<Kategori> 
+    @*burda bir model oluşturduk ve içine list tanımladık listin içine de çağırmak istediğimiz tabloyu ekliyoruz*@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+
+
+    <tr>
+        <th>ID</th>
+        <th> KATEGORİ AD</th>
+        <th> SİL</th>
+        <th> GÜNCELLE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.KategoriId</td>
+            <td> @x.KategoriAd</td>
+            <td><a href="/Kategori/KategoriSil/@x.KategoriId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kategori/KategoriGuncelle/@x.KategoriId" class=" btn btn-success">Güncelle</a></td>
+
+
+        </tr>
+    }
+</table>
+
+   
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
+
