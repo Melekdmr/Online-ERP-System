@@ -1,4 +1,6 @@
-﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Departman
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+
+@model List<MvcOnlineTicariOtomasyon.Models.Siniflar.Personel>
 @{
     ViewBag.Title = "DepartmanDetay";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -8,7 +10,7 @@
 <h2>Departman Detay Sayfası</h2>
 <br />
 <div style="background-color:darkgray">
-    
+
 </div>
 <br />
 <table class="table table-hover">
@@ -20,15 +22,26 @@
         <th>Satışlar</th>
 
     </tr>
+   @if (Model != null && Model.Any())
+{
+    foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PersonelId</td>
+            <td>@x.PersonelAd</td>
+            <td>@x.PersonelSoyad</td>
+            <td>@x.PersonelGorsel</td>
+            <td>
+                <a href="#" class="btn btn-default" style="background-color:#ff6a00">Satışlar</a>
+            </td>
+        </tr>
+    }
+}
+else
+{
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-
-            <a href="#" class="btn btn-default" style="background-color:#ff6a00">Satışlar</a></td>
-</tr>
-
+        <td colspan="5">Gösterilecek kayıt bulunamadı.</td>
+    </tr>
+}
 
 </table>
