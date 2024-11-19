@@ -57,7 +57,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 		public ActionResult DepartmanDetay(int? id )
 		{
 			var degerler = c.Personels.Where(x => x.DepartmanId == id).ToList();
+            var dpt = c.Departmans.Where(x => x.DepartmanId == id).Select(y => y.Departmanad).FirstOrDefault();
+            ViewBag.d = dpt;
+
 			return View(degerler);
 		}
+        public ActionResult  DepartmanPersonelSatis(int id)
+        {
+            var degerler = c.SatisHarekets.Where(x => x.PersonelId == id).ToList();
+            var per = c.Personels.Where(x => x.PersonelId == id).Select(y => y.PersonelAd+" "+y.PersonelSoyad).FirstOrDefault();
+            ViewBag.dpers = per;
+            return View(degerler);
+        }
 	}
 }

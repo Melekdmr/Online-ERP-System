@@ -1,0 +1,35 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Güncelleme Ekranı</h2>
+<br />
+@*FormMethod.Methot.Post: gizli ve güvenli bir şekilde veri gönderimi sağlar.*@
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.CariId)
+        <label for="CariAd">Cari Adı</label>
+        @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.CariAd,"", new {@style="color:red"})
+        <br />
+        <label for="CariSoyad">Cari Soyadı</label>
+        @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariSoyad, "", new {@style="color:red"})
+        <br />
+        <label for="CariSehir">Cari Şehir</label>
+        @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+        <br />
+        <label for="CariMail">Cari Mail</label>
+        @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+        <br />
+
+    </div>
+    <button class="btn btn-warning"> Güncelle</button>
+}
+
+
+

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2>Yeni Ürün Ekleme</h2>
+<h2>Yeni Ürün Ekleme Sayfası</h2>
 <br />
 <form class="form-group" method="post">
 
@@ -24,7 +24,7 @@
     <label for="Satış Fiyat">Satış Fiyat</label>
     @Html.TextBoxFor(x => x.SAtisFiyat, new { @class = "form-control" })
     <br />
-    <label for="Satış Fiyat">Kategori</label>
+    <label for="Kategori">Kategori</label>
     @Html.DropDownListFor(x=>x.KategoriID,(List<SelectListItem>)ViewBag.dgr1 , new {@class="form-control"})
     @*@Html.TextBoxFor(x => x.KategoriID, new { @class = "form-control" })*@
     <br />
