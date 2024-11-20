@@ -41,5 +41,31 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
 
 		}
+
+        public ActionResult PersonelGetir (int id)
+
+        {
+			List<SelectListItem> deger1 = (from x in c.Departmans.ToList() //Kategori verilerini bir dropdown list’te göstermek amacıyla gerekli 
+										   select new SelectListItem      //SelectListItem formatına dönüştürür.
+										   {                              //Böylece her bir kategori dropdown'da hem kullanıcıya anlamlı bir ad (Text),
+											   Text = x.Departmanad,       //hem de arka planda kullanılabilecek bir kimlik(Value) sağlar.
+											   Value = x.DepartmanId.ToString()
+
+
+										   }).ToList();
+			ViewBag.dgr1 = deger1;
+			var per = c.Personels.Find(id);
+            return View("PersonelGetir", per);
+        }
+        public ActionResult PersonelGuncelle(Personel p)
+        {
+            var per = c.Personels.Find(p.PersonelId);
+            per.PersonelAd = p.PersonelAd;
+            per.PersonelSoyad = p.PersonelSoyad;
+            per.PersonelGorsel = p.PersonelGorsel;
+            per.DepartmanId = p.DepartmanId;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
 	}
 }
