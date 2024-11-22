@@ -2983,10 +2983,10 @@
     <Content Include="Views\Fatura\FaturaDetay.cshtml" />
     <Content Include="Views\Fatura\YeniKalem.cshtml" />
     <Content Include="Views\Istatistik\Index.cshtml" />
+    <Content Include="Views\Galeri\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Galeri\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
