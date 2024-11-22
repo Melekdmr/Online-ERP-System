@@ -1,0 +1,49 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+
+@model List<MvcOnlineTicariOtomasyon.Models.Siniflar.FaturaKalem>
+@{
+    ViewBag.Title = "FaturaDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Kalemleri Sayfası</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Fatura Sıra No: @ViewBag.d</li>
+</ol>
+
+<table class="table table-hover">
+    <tr>
+        <th> ID</th>
+        <th>AÇIKLAMA</th>
+        <th>MİKTAR</th>
+        <th>BİRİM FİYAT</th>
+        <th>TUTAR</th>
+
+    </tr>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.FaturaKalemId</td>
+                <td>@x.Aciklama</td>
+                <td>@x.miktar</td>
+                <td>@x.BirimFiyat</td>
+                <td>@x.Tutar</td>
+
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="5">Gösterilecek kayıt bulunamadı.</td>
+        </tr>
+    }
+
+</table>
+<br />
+<a href="/Fatura/YeniKalem/" class="btn btn-default" style="background-color:#ff6a00 ; color: white;"><i class="fas fa-edit"></i> Yeni Kalem Girişi</a>
+
