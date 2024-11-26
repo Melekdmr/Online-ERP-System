@@ -12,4 +12,5 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 		public IEnumerable<Detay> Deger2 { get; set; }
 
 	}
-}
+}/* Bu sınıf sayesinde iki farklı veri kümesi bir araya getirilir ve View'e kolayca aktarılır.
+*/

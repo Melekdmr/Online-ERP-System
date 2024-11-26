@@ -71,9 +71,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult KolayTablolar()
         {
+            var sorgu =from x in c.Carilers group x by x.CariSehir into g  /* Bu satırda, Carilers tablosundaki her kaydı, CariSehir (şehir) alanına göre gruplar. Yani, aynı şehirdeki müşteriler bir araya getirilir. */
+					   select new SinifGrup /* Bu, her grup için yeni bir SinifGrup nesnesi oluşturur. SinifGrup modeli, her şehir için iki özellik içerir: */
+					   {
+                           Sehir=g.Key,   /* Sehir: Gruplamanın anahtar değeri, yani şehir adı.*/
+						   /* Burada Carilers tablosundan veri çekiliyor, ancak veri çekme işlemi 
+						    * sadece şehre göre gruplama ve sayma işlemleriyle özelleştirilmiş.
+						    * Yani veriyi doğrudan almak yerine, tablodaki her kaydın şehir (CariSehir) 
+						    * sütununa göre gruplandığı bir işlem gerçekleştiriliyor. Bu, daha anlamlı ve
+						    * düzenli bir veri sunumu sağlamak amacıyla yapılır.*/
+						   sayi = g.Count()  /* sayi: Bu şehirdeki toplam kayıt sayısını gösteren değer.*/
 
-            return View();
-            
-        }
+                       };
+            return View(sorgu.ToList()); /* Son olarak, sorgu.ToList() ile verileri listeye dönüştürüp, View'a gönderir.  */
+
+		}
     }
 }
