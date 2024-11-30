@@ -57,11 +57,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var deger15 = c.SatisHarekets.Count(x => x.Tarih == bugun).ToString();
             ViewBag.d15 = deger15;
 
-            var deger16 = c.SatisHarekets.Where(x => x.Tarih == bugun).Sum(y => y.Toplamtutar).ToString();
-			ViewBag.d16 = deger16;
+			/*   var deger16 = c.SatisHarekets.Where(x => x.Tarih == bugun).Sum(y => y.Toplamtutar).ToString();
+			   ViewBag.d16 = deger16;*/
+			
+			var deger16 = c.SatisHarekets
+						   .Where(x => x.Tarih == bugun)
+						   .Sum(y => (decimal?)y.Toplamtutar) ?? 0; // Null kontrolü ve sıfır varsayılan değer
+			ViewBag.d16 = deger16.ToString("N2"); // 2 basamaklı formatlama
 
 
-            var deger12 = c.Uruns.GroupBy(x => x.Marka).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault();
+
+			var deger12 = c.Uruns.GroupBy(x => x.Marka).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault();
             ViewBag.d12 = deger12;
 
             var deger13 = c.Uruns.Where(u=>u.UrunId==c.SatisHarekets.GroupBy(x => x.UrunId).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault()).Select(k=>k.UrunAd).FirstOrDefault();
@@ -86,5 +92,43 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(sorgu.ToList()); /* Son olarak, sorgu.ToList() ile verileri listeye dönüştürüp, View'a gönderir.  */
 
 		}
+
+        public PartialViewResult Partial1()
+        {   //her departmanda kaç adet personel olduğunu sorguluyoruz
+            var sorgu2 = from x in c.Personels
+                         group x by x.Departman.Departmanad into g
+                         select new SinifGrup2
+                         {
+                             Departman = g.Key,
+                             Sayi = g.Count()
+                         };
+            return PartialView(sorgu2.ToList());
+        }
+        public PartialViewResult Partial2()
+        {
+
+            var sorgu1 = c.Carilers.ToList();
+            return PartialView(sorgu1);      
+        }
+        public PartialViewResult Partial3()
+        {
+            var sorgu = c.Uruns.ToList();
+            return PartialView(sorgu);
+
+        }
+        public PartialViewResult Partial4()
+		{
+			var sorgu = from x in c.Uruns
+						 group x by x.Marka into g
+						 select new SinifGrup3
+						 {
+							marka = g.Key,
+							 sayi = g.Count()
+						 };
+			return PartialView(sorgu.ToList());
+
+		}
+    
     }
+
 }
