@@ -130,6 +130,7 @@
     <Compile Include="Controllers\SatisController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Controllers\UrunDetayController.cs" />
+    <Compile Include="Controllers\YapilacakController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +151,7 @@
     <Compile Include="Models\Siniflar\SinifGrup2.cs" />
     <Compile Include="Models\Siniflar\SinifGrup3.cs" />
     <Compile Include="Models\Siniflar\Urun.cs" />
+    <Compile Include="Models\Siniflar\Yapilacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -318,6 +320,7 @@
     <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
     <Content Include="Content\DataTables\css\select.semanticui.css" />
     <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\photo-frame.css" />
     <Content Include="Content\DataTables\images\details_close.png" />
     <Content Include="Content\DataTables\images\details_open.png" />
     <Content Include="Content\DataTables\images\sort_asc.png" />
@@ -2848,6 +2851,15 @@
     <Content Include="web2\resimler\book5.jpg" />
     <Content Include="web2\resimler\img1.jpg" />
     <Content Include="web2\w3layouts-License.txt" />
+    <Content Include="weblogintema\weblogin\css\font-awesome.css" />
+    <Content Include="weblogintema\weblogin\css\popup-box.css" />
+    <Content Include="weblogintema\weblogin\css\style.css" />
+    <Content Include="weblogintema\weblogin\fonts\fontawesome-webfont.svg" />
+    <Content Include="weblogintema\weblogin\images\bg.jpg" />
+    <Content Include="weblogintema\weblogin\index.html" />
+    <Content Include="weblogintema\weblogin\js\jquery-2.1.4.min.js" />
+    <Content Include="weblogintema\weblogin\js\jquery.magnific-popup.js" />
+    <Content Include="weblogintema\weblogin\w3layouts-License.txt" />
     <Content Include="Web\.gitignore" />
     <Content Include="Web\dist\401.html" />
     <Content Include="Web\dist\404.html" />
@@ -2996,6 +3008,13 @@
     <Content Include="Views\Istatistik\Partial2.cshtml" />
     <Content Include="Views\Istatistik\Partial3.cshtml" />
     <Content Include="Views\Istatistik\Partial4.cshtml" />
+    <Content Include="Views\Personel\PersonelListe.cshtml" />
+    <Content Include="Views\Yapilacak\Index.cshtml" />
+    <Content Include="weblogintema\weblogin\fonts\fontawesome-webfont.eot" />
+    <Content Include="weblogintema\weblogin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="weblogintema\weblogin\fonts\fontawesome-webfont.woff" />
+    <Content Include="weblogintema\weblogin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="weblogintema\weblogin\fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

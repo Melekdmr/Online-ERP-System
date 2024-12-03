@@ -5,11 +5,8 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
 
+<link rel="stylesheet" href="~/Content/DataTables/css/photo-frame.css" />
 <table class="table table-bordered" style="margin-top:20px;">
     <tr>
         <th>ID</th>
@@ -26,9 +23,24 @@
             <td>@x.PersonelId</td>
             <td>@x.PersonelAd</td>
             <td>@x.PersonelSoyad</td>
-            <td>@x.PersonelGorsel</td>
+            <td>
+
+                <a href="@x.PersonelGorsel" class="d-block photo-item" data-fancybox="gallery">
+                    <div class="photo-frame">
+                        <img src="@x.PersonelGorsel" class="rounded-circle" />
+                    </div>
+                    <div class="photo-text-more">
+                        <span class="icon icon-search"></span>
+                    </div>
+                </a>
+
+
+
+
+
+            </td>
             <td>@x.Departman.Departmanad</td>
-          
+
             <td><a href="/Personel/PersonelGetir/@x.PersonelId" class="btn btn-success">Güncelle</a></td>
             <td>
                 <a href="/Departman/DepartmanPersonelSatis/@x.PersonelId" class="btn btn-default" style="background-color: #546E7A; color: white; ">Detay</a>

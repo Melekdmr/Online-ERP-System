@@ -5,7 +5,8 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<table class="table table-bordered">
+<link rel="stylesheet" href="~/Content/DataTables/css/photo-frame.css" />
+<table class="table table-striped">
     <tr>
         <th>ID</th>
         <th>ÜRÜN</th>
@@ -29,7 +30,17 @@
             <td>@x.AlisFiyat</td>
             <td>@x.SAtisFiyat</td>
             <td>@(x.Kategori != null ? x.Kategori.KategoriAd : "Kategori Yok")</td>
-            <td>@x.UrunGorsel</td>
+            <td>
+                <a href="@x.UrunGorsel" class="d-block photo-item" data-fancybox="gallery">
+                    <div class="photo-frame">
+                        <img src="@x.UrunGorsel" class="rounded-circle" />
+                    </div>
+                    <div class="photo-text-more">
+                        <span class="icon icon-search"></span>
+                    </div>
+                </a>
+
+            </td>
             <td> <a href="/Urun/UrunSil/@x.UrunId" class="btn btn-danger">Sil</a></td>
             <td> <a href="/Urun/UrunGetir/@x.UrunId" class="btn btn-success">Güncelle</a></td>
            
