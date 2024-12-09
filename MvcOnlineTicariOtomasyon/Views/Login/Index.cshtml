@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="register-full">
             <div class="register-left">
                 <div class="register">
-                  
+
                     <h1>Asp.Net Mvc ile</h1>
                     <h2>Dinamik Web Projesi Geliştirme</h2>
                     <p>
@@ -94,26 +94,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- login form popup-->
     <div class="pop-up">
         <div id="small-dialog" class="mfp-hide book-form">
-
             <div class="login-form login-form-left">
                 <div class="agile-row">
                     <h3>Cari Giriş Formu</h3>
                     <span class="fa fa-lock"></span>
                     <div class="clear"></div>
                     <div class="login-agileits-top">
-                        <form action="#" method="post">
+                        @using (Html.BeginForm("CariLogin1", "Login", FormMethod.Post))
+                        {
                             <input type="text" class="name" name="CariMail" Placeholder="Mail Adresiniz" required="" />
-                            <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
+                            <input type="password" class="password" name="CariSifre" Placeholder="Şifreniz" required="" />
                             <input type="submit" value="Giriş Yap">
-                        </form>
+                        }
                     </div>
                     <div class="login-agileits-bottom">
-                        <h6><a href="#">Şİfremi Unuttum ?</a></h6>
+                        <h6><a href="#">Şifremi Unuttum?</a></h6>
                     </div>
                 </div>
             </div>
 
         </div>
+
     </div>
     <!-- //login form popup-->
     <!-- subscribe form popup-->
@@ -123,7 +124,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="login-form login-form-left">
                 <div class="agile-row">
                     <h3>Personel Giriş Formu</h3>
-                  
+
                     <div class="clear"></div>
                     <div class="login-agileits-top">
                         <form action="#" method="post">
@@ -142,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="pop-up">
         <div id="small-dialog2" class="mfp-hide book-form">
 
-            @Html.Action("Partial1","Login")
+            @Html.Action("Partial1", "Login")
 
         </div>
     </div>
