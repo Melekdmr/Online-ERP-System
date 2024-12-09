@@ -23,5 +23,12 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 			ViewBag.m = mail;
             return View(degerler);
         }
+		public ActionResult Siparislerim()
+		{
+			var mail = (string)Session["CariMail"];
+			var id = c.Carilers.Where(x => x.CariMail == mail.ToString()).Select(y => y.CariId).FirstOrDefault();
+			var degerler = c.SatisHarekets.Where(x => x.CariId == id).ToList();
+			return View(degerler);
+		}
     }
 }

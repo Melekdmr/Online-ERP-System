@@ -1,9 +1,46 @@
-﻿
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CariLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Mvc Online Ticari Otomasyon Cari Bilgi Paneli</h2>
 <br />
-@ViewBag.m
+@using (Html.BeginForm("Index2", "CariPanel", FormMethod.Post))
+            {
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            @*Amaç: Kullanıcının oturum açarken sağladığı kimlik bilgisini (Identity) almak.
+                HttpContext.Current.User: Geçerli kullanıcı oturumu bilgilerine erişim sağlar.
+                Identity.Name: Kullanıcının kimliğinin adını (genelde kullanıcı adı veya mail adresi) döndürür.
+                Örnek: Eğer oturum açan kullanıcı mail adresiyle giriş yaptıysa, burada mail adresi görüntülenir.*@
+                            <label>Mail Adresi: @HttpContext.Current.User.Identity.Name</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(x => x.CariSifre, new { @class = "form-control" })
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <button class="btn btn-warning">Bilgilerimi Güncelle</button>
+            }
