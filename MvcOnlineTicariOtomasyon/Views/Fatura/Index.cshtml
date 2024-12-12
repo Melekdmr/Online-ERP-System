@@ -16,7 +16,7 @@
         <th>TOPLAM TUTAR</th>
         <th>GÜNCELLE</th>
         <th> DETAYLAR</th>
-        <th> Popup Liste</th>
+      
         <th> Yeni Kalem</th>
     </tr>
     @foreach (var x in Model)
@@ -32,11 +32,12 @@
             <td>
                 <a href="/Fatura/FaturaDetay/@x.FaturaId" class="btn btn-default" style="background-color: #546E7A; color: white; ">Detay</a>
             </td>
+            @*<td>
+                <a href="/Fatura/FaturaDetay/@x.FaturaId" class="btn btn-default" style="background-color: #2F4F4F; color: white; ">Popup </a>
+            </td>*@
+            
             <td>
-                <a href="/Fatura/FaturaDetay/@x.FaturaId" class="btn btn-default" style="background-color:#ff6a00; color: white; ">Popup </a>
-            </td>
-            <td>
-                <a href="/Fatura/FaturaDetay/@x.FaturaId" class="btn btn-default" style="background-color: #2F4F4F; color: white; ">Kalem</a>
+                <a href="/Fatura/FaturaDetay/@x.FaturaId" class="btn btn-default" style="background-color: #ff6a00; color: white; ">Kalem</a>
             </td>
         </tr>
     }
@@ -44,3 +45,35 @@
 </table>
 <a href="/Fatura/FaturaEkle" class="btn btn-primary">Yeni Fatura Girişi</a>
 
+<br /><br />
+@*POP UP OLUŞTURMA*@
+
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Modal1">Popup Penceresi</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"></h2>
+
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <tr>
+                        <td>Seri No</td>
+                        <td>Sıra No</td>
+                        <td>Tolam Tutar</td>
+                   
+                    </tr>
+                    @foreach(var x in Model) {
+                    <tr>
+                        <td>@x.FaturaSeriNo</td>
+                        <td>@x.FaturaSıraNo</td>
+                        <td>@x.ToplamTutar</td>
+                    </tr>
+                    }
+                </table>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Tamam</button>
+            </div>
+        </div>
+    </div>
+</div>
