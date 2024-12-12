@@ -8,8 +8,9 @@
 <h2>Personel Güncelleme Ekranı</h2>
 <br />
 @*FormMethod.Methot.Post: gizli ve güvenli bir şekilde veri gönderimi sağlar.*@
-@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    {
     <div class="form-group">
         @Html.HiddenFor(x => x.PersonelId)
         <label for="PersonelAd">Personel Adı</label>
@@ -21,7 +22,7 @@
 
         <br />
         <label for="PersonelGorsel">Personel Görsel</label>
-        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+        <input type="file" name="PersonelGorsel" />
         <br />
         <label for="Departman">Departman</label>
         @Html.DropDownListFor(x => x.DepartmanId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
@@ -29,6 +30,6 @@
 
     </div>
     <button class="btn btn-warning"> Güncelle</button>
+    }
 }
-
 
