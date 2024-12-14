@@ -16,7 +16,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         Context c = new Context();
         public ActionResult Index(int sayfa=1)
         {
-            var degerler = c.Kategoris.ToList().ToPagedList(sayfa,4);
+            var degerler = c.Kategoris.ToList().ToPagedList(sayfa,7);
             return View(degerler);
         }
         [HttpGet]
