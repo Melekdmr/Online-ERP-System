@@ -33,25 +33,36 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 		public ActionResult GelenMesajlar()
 		{
 			var mail = (string)Session["CariMail"];
-			var mesajlar = c.Mesajlars.Where(x=>x.Gonderilen==mail).ToList();
+			var mesajlar = c.Mesajlars.Where(x=>x.Gonderilen==mail).OrderByDescending(x=>x.MesajId)  .ToList();
 			var gelensayisi = c.Mesajlars.Count(x => x.Gonderilen == mail).ToString();
 			ViewBag.d1 = gelensayisi;
 			var gidensayisi = c.Mesajlars.Count(x => x.Gonderen == mail).ToString();
 			ViewBag.d2 = gidensayisi;
 			return View(mesajlar);
-			return View(mesajlar);
+			
 		}
 		public ActionResult GidenMesajlar()
 		{
 			var mail = (string)Session["CariMail"];
-			var mesajlar = c.Mesajlars.Where(x => x.Gonderen == mail).ToList();
+			var mesajlar = c.Mesajlars.Where(x => x.Gonderen == mail).OrderByDescending(z=> z.MesajId).ToList();
 			var gelensayisi = c.Mesajlars.Count(x => x.Gonderilen == mail).ToString();
 			ViewBag.d1 = gelensayisi;
 			var gidensayisi = c.Mesajlars.Count(x => x.Gonderen == mail).ToString();
 			ViewBag.d2 = gidensayisi;
 			return View(mesajlar);
 		}
-		public ActionResult MesajDetay()
+		public ActionResult MesajDetay(int id)
+		{
+			var degerler = c.Mesajlars.Where(x => x.MesajId == id).ToList();
+			var mail = (string)Session["CariMail"];
+			var gelensayisi = c.Mesajlars.Count(x => x.Gonderilen == mail).ToString();
+			ViewBag.d1 = gelensayisi;
+			var gidensayisi = c.Mesajlars.Count(x => x.Gonderen == mail).ToString();
+			ViewBag.d2 = gidensayisi;
+			return View(degerler);
+		}
+		[HttpGet]
+		public ActionResult YeniMesaj()
 		{
 			var mail = (string)Session["CariMail"];
 			var gelensayisi = c.Mesajlars.Count(x => x.Gonderilen == mail).ToString();
@@ -60,15 +71,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 			ViewBag.d2 = gidensayisi;
 			return View();
 		}
-		//[HttpGet]
-		//public ActionResult YeniMesaj()
-		//{
-		//	return View();
-		//}
-		//[HttpPost]
-		//public ActionResult YeniMesaj()
-		//{
-		//	return View();
-		//}
+
+		[HttpPost]
+		public ActionResult YeniMesaj(Mesajlar m)
+		{
+			var mail = (string)Session["CariMail"];
+			m.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+			m.Gonderen = mail;
+			c.Mesajlars.Add(m);
+			c.SaveChanges();
+			
+			return View();
+		}
 	}
 }

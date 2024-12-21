@@ -1,11 +1,9 @@
-﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
-@model List<Mesajlar>
-@{
-    ViewBag.Title = "MesajDetay";
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Mesajlar
+
+  @{
+    ViewBag.Title = "YeniMesaj";
     Layout = "~/Views/Shared/_CariLayout.cshtml";
 }
-
-
 
 
 
@@ -19,7 +17,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>AdminLTE 3 | Read Mail</title>
+    <title>AdminLTE 3 | Compose Message</title>
 
     <!-- Tell the browser to be responsive to screen width -->
 
@@ -37,15 +35,22 @@
 
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
 
+    <!-- summernote -->
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+
     <!-- Google Font: Source Sans Pro -->
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="hold-transition sidebar-mini">
 
-    <!-- Content Wrapper. Contains page content -->
+
+
+
+
     <!-- Content Header (Page header) -->
 
     <section class="content-header">
@@ -56,9 +61,11 @@
 
                 <div class="col-sm-6">
 
-                    <h1>Mesaj Detayları</h1>
+                    <h1>Yeni Mesaj Oluştur</h1>
 
                 </div>
+
+
 
             </div>
 
@@ -76,7 +83,7 @@
 
                 <div class="col-md-3">
 
-                    <a href="/CariPanel/YeniMesaj/" class="btn btn-primary btn-block mb-3">Yeni Mesaj Oluştur</a>
+                    <a href="/CariPanel/GelenMesajlar/" class="btn btn-primary btn-block mb-3">Gelen Kutusu</a>
 
                     <div class="card">
 
@@ -128,7 +135,7 @@
 
                                         <i class="far fa-file-alt"></i> Taslaklar
                                         <span class="badge bg-fuchsia
-                              float-right">5</span>
+                          float-right">5</span>
 
                                     </a>
 
@@ -236,145 +243,96 @@
                 </div>
 
                 <!-- /.col -->
-                @foreach (var x in Model)
-                {
 
-                    <div class="col-md-9">
+                <div class="col-md-9">
 
-                        <div class="card card-primary card-outline">
+                    <div class="card card-primary card-outline">
 
-                            <div class="card-header">
+                        <div class="card-header">
 
-                                <h3 class="card-title">Mesajı Oku</h3>
+                            <h3 class="card-title">Mesaj Yaz</h3>
 
-                                <div class="card-tools">
+                        </div>
 
-                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                        <!-- /.card-header -->
+                        <form class="form-group" method="post">
 
-                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                            <div class="card-body">
 
-                                </div>
+                                <div class="form-group">
 
-                            </div>
-
-                            <!-- /.card-header -->
-
-                            <div class="card-body p-0">
-
-                                <div class="mailbox-read-info">
-
-                                    <h5>Konu:@x.Konu</h5>
-
-                                    <h6>
-
-                                        Gönderen: @x.Gonderen
-
-                                        <span class="mailbox-read-time float-right">@x.Tarih.ToShortDateString()</span>
-
-                                    </h6>
+                                    <input class="form-control" name="Gonderilen" placeholder="Kime:">
 
                                 </div>
 
-                                <!-- /.mailbox-read-info -->
+                                <div class="form-group">
 
-                                <div class="mailbox-controls with-border text-center">
+                                    <input class="form-control" name="Konu" placeholder="Konu:">
 
-                                    <div class="btn-group">
+                                </div>
 
-                                        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                                <div class="form-group">
 
-                                            <i class="far fa-trash-alt"></i>
+                                    <textarea id="compose-textarea" class="form-control" name="icerik" style="height: 300px"></textarea>
+                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                </div>
 
-                                        </button>
+                                @*<div class="form-group">
 
-                                        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
+                                    <div class="btn btn-default btn-file">
 
-                                            <i class="fas fa-reply"></i>
+                                        <i class="fas fa-paperclip"></i> Dosya Yükle
 
-                                        </button>
-
-                                        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
-
-                                            <i class="fas fa-share"></i>
-
-                                        </button>
+                                        <input type="file" name="attachment">
 
                                     </div>
 
-                                    <!-- /.btn-group -->
 
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
-
-                                        <i class="fas fa-print"></i>
-
-                                    </button>
-
-                                </div>
-
-                                <!-- /.mailbox-controls -->
-
-                                <div class="mailbox-read-message">
-
-                              
-
-                                    <p>
-
-                                   @x.icerik
-
-                                    </p>
-
-
-                                </div>
-
-                                <!-- /.mailbox-read-message -->
-
+                                </div>*@
                             </div>
-
+                            </form>
                             <!-- /.card-body -->
-                            <!-- /.card-footer -->
-
                             <div class="card-footer">
 
                                 <div class="float-right">
 
-                                    <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Yanıtla</button>
+                                    <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Taslak</button>
 
-                                    <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
+                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
 
                                 </div>
 
-                                <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
-
-                                <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
+                                <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> Vazgeç</button>
 
                             </div>
 
                             <!-- /.card-footer -->
 
-                        </div>
-
-                        <!-- /.card -->
-
                     </div>
-                }
+
+                    <!-- /.card -->
+
+                </div>
+
                 <!-- /.col -->
 
             </div>
 
             <!-- /.row -->
 
-        </div>
+        </div><!-- /.container-fluid -->
 
     </section>
 
     <!-- /.content -->
+    <!-- ./wrapper -->
     <!-- jQuery -->
 
     <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap 4 -->
 
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- AdminLTE App -->
 
@@ -384,8 +342,21 @@
 
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 
+    <!-- Summernote -->
+
+    <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+
+    <!-- Page Script -->
+
+    <script>
+        $(function () {
+
+            //Add text editor
+
+            $('#compose-textarea').summernote()
+
+        })</script>
+
 </body>
 
 </html>
-
-
