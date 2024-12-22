@@ -1,0 +1,30 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "CariKargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+
+<br />
+
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>AÇIKLAMA</th>
+        <th>TARİH</th>
+
+    </tr>
+    @{
+        int counter = 1; // Satır numaralandırma için sayaç
+    }
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@counter</td>
+            <td>@x.Aciklama</td>
+            <td>@x.TarihZaman</td>
+        </tr>
+        counter++; // Sayaç her satırda bir artırılır
+    }
+    </table>
