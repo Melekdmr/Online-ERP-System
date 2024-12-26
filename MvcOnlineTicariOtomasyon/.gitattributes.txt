@@ -1,0 +1,2 @@
+﻿# Proje dili C# olarak algılansın
+*.cs linguist-detectable=true
