@@ -20,10 +20,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 			var mail = (string)Session["CariMail"]; //Amaç: Kullanıcının oturum bilgilerini almak.Session,
 											//kullanıcının tarayıcı oturumu boyunca veri saklamak için kullanılır.
 													//oturumdan alınan değeri açıkça bir string türüne dönüştürür.
-			var degerler = c.Carilers.FirstOrDefault(x => x.CariMail == mail);
+			//var degerler = c.Carilers.FirstOrDefault(x => x.CariMail == mail).ToList();
+			//ViewBag.m = mail;
+   //         return View(degerler);
+			var degerler = c.Carilers.Where(x => x.CariMail == mail).ToList(); // Liste döndürün
 			ViewBag.m = mail;
-            return View(degerler);
-        }
+			return View(degerler);
+		}
 		public ActionResult Siparislerim()
 		{
 			var mail = (string)Session["CariMail"];

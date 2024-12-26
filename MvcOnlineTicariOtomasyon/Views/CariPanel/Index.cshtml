@@ -1,4 +1,5 @@
-﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Cariler>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CariLayout.cshtml";
@@ -56,7 +57,7 @@
 
                     <div class="col-sm-6">
 
-                        <h1>Profile</h1>
+                        <h1>Profilim</h1>
 
                     </div>
 
@@ -91,11 +92,11 @@
                                          alt="User profile picture">
 
                                 </div>
-
-                                <h3 class="profile-username text-center">Nina Mcintire</h3>
-
-                                <p class="text-muted text-center">Software Engineer</p>
-
+                                @foreach (var x in Model)
+                                {
+                                    <h3 class="profile-username text-center">@x.CariAd @x.CariSoyad</h3>
+                                    <p class="text-muted text-center">@x.CariMail</p>
+                                }
                                 <ul class="list-group list-group-unbordered mb-3">
 
                                     <li class="list-group-item">
@@ -128,7 +129,7 @@
 
                         <!-- /.card -->
                         <!-- About Me Box -->
-
+                        @foreach(var y in Model) { 
                         <div class="card card-primary">
 
                             <div class="card-header">
@@ -141,35 +142,27 @@
 
                             <div class="card-body">
 
-                                <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                                <strong><i class="fas fa-book mr-1"></i> Meslek</strong>
 
                                 <p class="text-muted">
 
-                                    B.S. in Computer Science from the University of Tennessee at Knoxville
+                                    Bilgisayar Mühendisi
 
                                 </p>
 
                                 <hr>
 
-                                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                                <strong><i class="fas fa-map-marker-alt mr-1"></i> Şehir</strong>
 
-                                <p class="text-muted">Malibu, California</p>
+                                <p class="text-muted">@y.CariSehir</p>
 
                                 <hr>
 
-                                <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+                                <strong><i class="fas fa-pencil-alt mr-1"></i> Telefon</strong>
 
                                 <p class="text-muted">
 
-                                    <span class="tag tag-danger">UI Design</span>
-
-                                    <span class="tag tag-success">Coding</span>
-
-                                    <span class="tag tag-info">Javascript</span>
-
-                                    <span class="tag tag-warning">PHP</span>
-
-                                    <span class="tag tag-primary">Node.js</span>
+                                <p class="text-muted"> +90 (555) (500-00-00)</p>
 
                                 </p>
 
@@ -180,15 +173,15 @@
                                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
 
                             </div>
-
+                            
                             <!-- /.card-body -->
 
                         </div>
 
                         <!-- /.card -->
-
+                        }
                     </div>
-
+                        
                     <!-- /.col -->
 
                     <div class="col-md-9">
@@ -752,9 +745,10 @@
 
     <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
 
-                    </tr>
+    <!-- AdminLTE for demo purposes -->
 
-                </table>
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 
-                <button class="btn btn-warning">Bilgilerimi Güncelle</button>
-            }
+</body>
+
+</html>
