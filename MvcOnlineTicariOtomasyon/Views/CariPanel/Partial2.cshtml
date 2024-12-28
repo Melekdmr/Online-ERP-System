@@ -1,0 +1,38 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Mesajlar>
+
+<!-- Font Awesome bağlantısı -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+@foreach (var x in Model)
+{
+    <div class="timeline timeline-inverse">
+
+        <!-- Tarih etiketi -->
+        <div class="time-label">
+            <span class="bg-warning">
+                @x.Tarih.ToShortDateString()
+            </span>
+        </div>
+
+        <!-- Mesaj öğesi -->
+        <div>
+            <!-- İkon -->
+            <i class="fas fa-envelope bg-primary text-white p-2"
+               style="border-radius: 50%; font-size: 1.8rem; width: 2rem; height: 2rem; display: flex; justify-content: center; align-items: center;"></i>
+
+
+            <!-- Zaman Çizelgesi Öğesi -->
+            <div class="timeline-item">
+                <span class="time"><i class="far fa-clock"></i> 12:05</span>
+                <h3 class="timeline-header">
+                    <a href="#" style="color: red;">@x.Konu</a>
+                </h3>
+                <div class="timeline-body">
+                    @x.icerik
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
