@@ -89,7 +89,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
-        //Personel Tema sayfasına geçiş
+        //Personel Tema sayfasına geçiş indexe yönelendirilmemeli 
         public ActionResult PersonelListe()
         {
             var sorgu = c.Personels.ToList();

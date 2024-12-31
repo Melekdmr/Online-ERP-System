@@ -7,24 +7,28 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
-    public class DepartmanController : Controller
+	[Authorize]
+	public class DepartmanController : Controller
     {
         // GET: Departman
         Context c = new Context();
-        public ActionResult Index()
+		
+		public ActionResult Index()
         {
 
             var degerler = c.Departmans.Where(x => x.Durum == true).ToList(); 
             return View(degerler);
         }
         [HttpGet]
+      
         public ActionResult DepartmanEkle()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult DepartmanEkle(Departman d)
+
+		public ActionResult DepartmanEkle(Departman d)
 		{
 			d.Durum = true;
 			c.Departmans.Add(d);
@@ -33,7 +37,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
 
         }
-        public ActionResult DepartmanSil(int id)
+	
+		public ActionResult DepartmanSil(int id)
         {
             var deger = c.Departmans.Find(id);
             deger.Durum = false;

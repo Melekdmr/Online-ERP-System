@@ -8,7 +8,8 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
-    public class IstatistikController : Controller
+	[Authorize]
+	public class IstatistikController : Controller
     {
         // GET: Istatistik
         Context c = new Context();
