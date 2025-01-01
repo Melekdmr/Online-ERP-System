@@ -160,6 +160,7 @@
     <Compile Include="Models\Siniflar\Cariler.cs" />
     <Compile Include="Models\Siniflar\Class1.cs" />
     <Compile Include="Models\Siniflar\Class3.cs" />
+    <Compile Include="Models\Siniflar\Class4.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
     <Compile Include="Models\Siniflar\Departman.cs" />
     <Compile Include="Models\Siniflar\Detay.cs" />
@@ -232,6 +233,11 @@
     <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\images.jpeg" />
     <Content Include="AdminLTE-3.0.4\dist\img\m.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\pc2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\pc3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\pc4.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\pc5.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\pc6.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo1.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo2.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo3.jpg" />
@@ -3175,6 +3181,7 @@
     <Content Include="Views\CariPanel\Partial2.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
     <Content Include="Views\Kategori\Deneme.cshtml" />
+    <Content Include="Views\Fatura\Dinamik.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
