@@ -178,7 +178,7 @@
                         </div>
                         <label for="ToplamTutar" class="col-sm-2 col-form-label">Toplam Tutar</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="TeslimEden" name="ToplamTutar" placeholder="ToplamTutar">
+                            <input type="text" class="form-control" id="ToplamTutar" name="ToplamTutar" placeholder="ToplamTutar">
                         </div>
                     </div>
 
@@ -268,6 +268,7 @@
                 BirimFiyat = $("#BirimFiyat").val(),
 
                miktar = $("#miktar").val(),
+               Tutar = $("#Tutar").val(),
 
                 detailsTableBody = $("#detailsTable tbody");
 
@@ -325,7 +326,7 @@
 
                 type: 'POST',
 
-                url: "/Siparis/SaveOrder",
+                url: "/Fatura/FaturaKaydet",
 
                 data: data,
 
@@ -365,13 +366,13 @@
 
                 orderArr.push({
 
-                    urun: $(this).find('td:eq(0)').html(),
+                    Aciklama: $(this).find('td:eq(0)').html(),
 
-                    Adet: $(this).find('td:eq(1)').html(),
+                    miktar: $(this).find('td:eq(1)').html(),
 
-                    Fiyat: $(this).find('td:eq(2)').html(),
+                   BirimFiyat: $(this).find('td:eq(2)').html(),
 
-                    Toplam: $(this).find('td:eq(3)').html()
+                    Tutar: $(this).find('td:eq(3)').html()
 
                 });
 
@@ -383,11 +384,16 @@
 
             var data = JSON.stringify({
 
-                ad: $("#ad").val(),
+                FaturaSeriNo: $("#FaturaSeriNo").val(),
 
-                sehir: $("#sehir").val(),
-
-                order: orderArr
+                FaturaSıraNo: $("#FaturaSıraNo").val(),
+                Tarih: $("#Tarih").val(),
+                VargiDairesi: $("#VargiDairesi").val(),
+                Saat: $("#Saat").val(),
+                TeslimEden: $("#TeslimEden").val(),
+                TeslimAlan: $("#TeslimAlan").val(),
+                ToplamTutar: $("#ToplamTutar").val(),
+                Kalemler: orderArr
 
             });
 
