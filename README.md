@@ -41,3 +41,33 @@ Bu proje, işletmelerin günlük operasyonlarını daha verimli hale getirmek am
 - Mesajlaşma: Diğer carilerle mesajlaşma işlemi yapabilir.
 
 🔗 Projenin detaylarına ve kodlara göz atmak isterseniz, buradan ulaşabilirsiniz: [GitHubRepository](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon)
+## Veritabanı Şeması
+
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/db.png)
+
+
+## Login Ekranı Görselleri
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/login1.png)
+
+
+## Cari Paneli Görselleri 
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/profil.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/duyuru.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/mesaj.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/yenimesj.png)
+
+
+## Admin Paneli Görselleri 
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/galeri.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/satislar.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/yazd%C4%B1r.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/urundetay.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/dinamikf.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/percart.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/todo.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/hizlitablo.png)
+
+
+## İletişim 📧
+🔗 Eğer proje hakkında bir sorunuz varsa, lütfen benimle iletişime geçin!
+
