@@ -48,7 +48,7 @@ Bu proje, işletmelerin günlük operasyonlarını daha verimli hale getirmek am
 
 ## Login Ekranı Görselleri
 ![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/login1.png)
-
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/login2.png)
 
 ## Cari Paneli Görselleri 
 ![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/profil.png)
