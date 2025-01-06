@@ -60,7 +60,7 @@ Bu proje, işletmelerin günlük operasyonlarını daha verimli hale getirmek am
 ## Admin Paneli Görselleri 
 ![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/galeri.png)
 ![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/satislar.png)
-![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/yazd%C4%B1r.png)
+![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/pie.png)
 ![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/urundetay.png)
 ![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/dinamikf.png)
 ![ ](https://github.com/Melekdmr/Mvc5-Online-Ticari-Otomasyon/blob/master/images/percart.png)
